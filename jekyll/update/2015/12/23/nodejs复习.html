@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>nodejs基础复习</title>
+  <meta name="description" content="模块定义    exports.funName = function(){};    module.exports = {        key: value    };    模块引入    var modal = require('xxxx.js');    模块调用    modal.fn()    ">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/jekyll/update/2015/12/23/nodejs%E5%A4%8D%E4%B9%A0.html">
+  <link rel="alternate" type="application/rss+xml" title="CatsJungle-流水账" href="http://yourdomain.com/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">CatsJungle-流水账</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">nodejs基础复习</h1>
+    <p class="post-meta">Dec 23, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <h3 id="section">模块定义</h3>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">exports</span><span class="p">.</span><span class="nx">funName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>
+    <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">key</span><span class="p">:</span> <span class="nx">value</span>
+    <span class="p">};</span>
+    <span class="err">模块引入</span>
+    <span class="kd">var</span> <span class="nx">modal</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'xxxx.js'</span><span class="p">);</span>
+    <span class="err">模块调用</span>
+    <span class="nx">modal</span><span class="p">.</span><span class="nx">fn</span><span class="p">()</span>
+    </code></pre></figure>
+
+<hr />
+
+<h3 id="http--fs">http模块 &amp;&amp; fs模块</h3>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
+
+    <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">){</span>
+        <span class="c1">// req.url;</span>
+        <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">'/path/filename'</span><span class="p">,</span> <span class="s1">'utf-8'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">){</span>
+             <span class="nx">response</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">){})</span>
+             <span class="nx">response</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span><span class="s1">'end'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){})</span>
+             <span class="nx">response</span><span class="p">.</span><span class="nx">write</span><span class="p">()</span>
+             <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">()</span>
+        <span class="p">});</span>
+    <span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="s1">'80'</span><span class="p">);</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">rename</span><span class="p">(</span><span class="nx">oldPath</span><span class="p">,</span> <span class="nx">newPath</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>   <span class="err">修改名字，回调函数为</span><span class="kd">function</span><span class="p">(</span><span class="nx">exception</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">truncate</span><span class="p">(</span><span class="nx">fd</span><span class="p">,</span> <span class="nx">len</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="err">截断文件</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">chown</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">uid</span><span class="p">,</span> <span class="nx">gid</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="nx">fs</span><span class="p">.</span><span class="nx">fchown</span><span class="p">(</span><span class="nx">fd</span><span class="p">,</span> <span class="nx">uid</span><span class="p">,</span> <span class="nx">gid</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="err">修改文件所属</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">chmod</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">mode</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">fchmod</span><span class="p">(</span><span class="nx">fd</span><span class="p">,</span> <span class="nx">mode</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span> <span class="err">修改文件权限</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">stat</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>   <span class="nx">fs</span><span class="p">.</span><span class="nx">lstat</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="nx">fs</span><span class="p">.</span><span class="nx">fstat</span><span class="p">(</span><span class="nx">fd</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="err">返回文件</span><span class="nx">stat</span><span class="err">，回调为</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="nx">state</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">link</span><span class="p">(</span><span class="nx">srcpath</span><span class="p">,</span> <span class="nx">dstpath</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="nx">fs</span><span class="p">.</span><span class="nx">symlink</span><span class="p">(</span><span class="nx">srcpath</span><span class="p">,</span> <span class="nx">dstpath</span><span class="p">,</span> <span class="p">[</span><span class="nx">type</span><span class="p">],</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span> <span class="err">创建链接与符号链接</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">readlink</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="err">读取</span><span class="nx">link</span><span class="err">的内容</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">unlink</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">rmdir</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>   <span class="nx">fs</span><span class="p">.</span><span class="nx">mkdir</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="p">[</span><span class="nx">mode</span><span class="p">],</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="err">目录创建与删除</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">readdir</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="err">读取目录内容</span>  <span class="err">回调为</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="nx">files</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">flags</span><span class="p">,</span> <span class="p">[</span><span class="nx">mode</span><span class="p">],</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>    <span class="err">回调为</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="nx">fd</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">fd</span><span class="p">,</span> <span class="nx">buffer</span><span class="p">,</span> <span class="nx">offset</span><span class="p">,</span> <span class="nx">length</span><span class="p">,</span> <span class="nx">position</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="err">回调为</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="nx">len</span><span class="p">,</span><span class="nx">buf</span><span class="p">)</span> <span class="p">;</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">fd</span><span class="p">,</span> <span class="nx">buffer</span><span class="p">,</span> <span class="nx">offset</span><span class="p">,</span> <span class="nx">length</span><span class="p">,</span> <span class="nx">position</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="err">回调为</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="nx">len</span><span class="p">,</span><span class="nx">buf</span><span class="p">)</span> <span class="p">;</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">close</span><span class="p">(</span><span class="nx">fd</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">utimes</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">atime</span><span class="p">,</span> <span class="nx">mtime</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="nx">fs</span><span class="p">.</span><span class="nx">futimes</span><span class="p">(</span><span class="nx">fd</span><span class="p">,</span> <span class="nx">atime</span><span class="p">,</span> <span class="nx">mtime</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="err">修改文件的访问时间与修改时间</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">fsync</span><span class="p">(</span><span class="nx">fd</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">filename</span><span class="p">,</span> <span class="p">[</span><span class="nx">encoding</span><span class="p">],</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>     <span class="err">高层接口，回调为</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="nx">data</span><span class="p">)</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="nx">filename</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="p">[</span><span class="nx">encoding</span><span class="p">],</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>  <span class="err">高层接口，回调为</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">appendFile</span><span class="p">(</span><span class="nx">filename</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">encoding</span><span class="o">=</span><span class="s1">'utf8'</span><span class="p">,</span> <span class="p">[</span><span class="nx">callback</span><span class="p">])</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="nx">path</span><span class="p">,[</span><span class="nx">opt</span><span class="p">])</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="nx">path</span><span class="p">,[</span><span class="nx">opt</span><span class="p">])</span> <span class="err">从路径创建输入与输出流</span>
+    </code></pre></figure>
+
+<hr />
+
+<h3 id="url--querystring--path">模块url &amp; querystring &amp; path</h3>
+
+<pre><code>var url = require('url');
+var querystring = require('querystring');
+var path =
+
+url.parse(str, true, true)
+url.format(json)
+url.resolve()
+
+querystring.stringify()
+querystring.parse()
+
+path.normalize() 处理path中得.和..
+path.join(a,b,..,z) 处理为a/b/.../z，并执行normalize
+path.resolve(a,b,...,z) 对每个元素执行cd item ,并返回最终结果
+path.relative(a, b) 返回b对于a的
+path.dirname() 返回路径的目录部分
+path.basename() 返回文件名
+path.extname(path) 返回路径的扩展名部分
+path.extname(path) 返回路径的扩展名部分
+path.seq  OS特定的路径分隔符 "\\" 或  "/" *** ### child process模块 提供了操作子进程以及与进程间通信的基本功能。
+</code></pre>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">CatsJungle-流水账</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>CatsJungle-流水账</li>
+          <li><a href="mailto:catsforestc@gmail.com">catsforestc@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/catsjungle">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">catsjungle</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
