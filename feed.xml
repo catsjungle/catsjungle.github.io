@@ -4,10 +4,10 @@
     <title>CatsJungle-流水账</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 24 Dec 2015 02:55:16 +0800</pubDate>
-    <lastBuildDate>Thu, 24 Dec 2015 02:55:16 +0800</lastBuildDate>
+    <link>http://catsjungle.com/</link>
+    <atom:link href="http://catsjungle.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 24 Dec 2015 14:39:34 +0800</pubDate>
+    <lastBuildDate>Thu, 24 Dec 2015 14:39:34 +0800</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -90,8 +90,8 @@ path.seq  OS特定的路径分隔符 &quot;\\&quot; 或  &quot;/&quot; *** ### c
 &lt;/code&gt;&lt;/pre&gt;
 </description>
         <pubDate>Wed, 23 Dec 2015 08:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/12/23/nodejs%E5%A4%8D%E4%B9%A0.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/12/23/nodejs%E5%A4%8D%E4%B9%A0.html</guid>
+        <link>http://catsjungle.com/jekyll/update/2015/12/23/nodejs%E5%A4%8D%E4%B9%A0.html</link>
+        <guid isPermaLink="true">http://catsjungle.com/jekyll/update/2015/12/23/nodejs%E5%A4%8D%E4%B9%A0.html</guid>
         
         
         <category>jekyll</category>
@@ -110,8 +110,8 @@ path.seq  OS特定的路径分隔符 &quot;\\&quot; 或  &quot;/&quot; *** ### c
 &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;输出完整的&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;SHA1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;值&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Wed, 18 Nov 2015 08:05:51 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/11/18/git%E4%B8%8D%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/11/18/git%E4%B8%8D%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</guid>
+        <link>http://catsjungle.com/jekyll/update/2015/11/18/git%E4%B8%8D%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</link>
+        <guid isPermaLink="true">http://catsjungle.com/jekyll/update/2015/11/18/git%E4%B8%8D%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</guid>
         
         
         <category>jekyll</category>
@@ -138,8 +138,8 @@ path.seq  OS特定的路径分隔符 &quot;\\&quot; 或  &quot;/&quot; *** ### c
 
 </description>
         <pubDate>Fri, 21 Aug 2015 08:05:51 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/08/21/test.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/08/21/test.html</guid>
+        <link>http://catsjungle.com/jekyll/update/2015/08/21/test.html</link>
+        <guid isPermaLink="true">http://catsjungle.com/jekyll/update/2015/08/21/test.html</guid>
         
         
         <category>jekyll</category>
@@ -166,8 +166,8 @@ path.seq  OS特定的路径分隔符 &quot;\\&quot; 或  &quot;/&quot; *** ### c
 
 </description>
         <pubDate>Fri, 21 Aug 2015 08:05:51 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/08/21/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/08/21/welcome-to-jekyll.html</guid>
+        <link>http://catsjungle.com/jekyll/update/2015/08/21/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://catsjungle.com/jekyll/update/2015/08/21/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
