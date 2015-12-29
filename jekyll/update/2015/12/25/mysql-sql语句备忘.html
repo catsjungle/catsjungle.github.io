@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-">
+  <title>mysql sql语句备忘</title>
+  <meta name="description" content="  显示所有数据库">
   <link rel="icon" href="/css/favicon.ico" type="image/x-icon" >
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://catsjungle.com/about/">
+  <link rel="canonical" href="http://catsjungle.com/jekyll/update/2015/12/25/mysql-sql%E8%AF%AD%E5%8F%A5%E5%A4%87%E5%BF%98.html">
   <link rel="alternate" type="application/rss+xml" title="CatsJungle-流水账" href="http://catsjungle.com/feed.xml" />
 </head>
 
@@ -58,17 +57,132 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title">mysql sql语句备忘</h1>
+    <p class="post-meta">Dec 25, 2015</p>
   </header>
 
   <article class="post-content">
-    <h1 id="jekyll">jekyll初用</h1>
+    <ul>
+  <li>显示所有数据库</li>
+</ul>
 
-<p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="http://jekyllrb.com/">jekyllrb.com</a></p>
+<blockquote>
+  <p>show databases;</p>
+</blockquote>
 
-<p>You can find the source code for the Jekyll new theme at: <a href="https://github.com/jglovier/jekyll-new">github.com/jglovier/jekyll-new</a></p>
+<ul>
+  <li>进入某个数据库</li>
+</ul>
 
-<p>You can find the source code for Jekyll at <a href="https://github.com/jekyll/jekyll">github.com/jekyll/jekyll</a></p>
+<blockquote>
+  <p>use dbname;</p>
+</blockquote>
+
+<ul>
+  <li>显示所有表</li>
+</ul>
+
+<blockquote>
+  <p>show tables;</p>
+</blockquote>
+
+<ul>
+  <li>创建数据库</li>
+</ul>
+
+<blockquote>
+  <p>CREATE DATABASES dbname;</p>
+</blockquote>
+
+<ul>
+  <li>删除数据库</li>
+</ul>
+
+<blockquote>
+  <p>drop database dbname;</p>
+</blockquote>
+
+<ul>
+  <li>修改数据库名称</li>
+</ul>
+
+<blockquote>
+  <p>sp_renamedb ‘old_name’ ‘new_name’;</p>
+</blockquote>
+
+<ul>
+  <li>创建新表</li>
+</ul>
+
+<blockquote>
+  <p>create table tabname(col1 type1 [not null] [primary key], col2 type2[not null], ..);</p>
+</blockquote>
+
+<ul>
+  <li>删除表</li>
+</ul>
+
+<blockquote>
+  <p>drop table tabname;</p>
+</blockquote>
+
+<ul>
+  <li>查看表结构</li>
+</ul>
+
+<blockquote>
+  <p>desc tabname;</p>
+</blockquote>
+
+<ul>
+  <li>添加一条数据</li>
+</ul>
+
+<blockquote>
+  <p>insert into tabname (col1, col2, …) values (value1, value2, …);</p>
+</blockquote>
+
+<ul>
+  <li>增加一个列</li>
+</ul>
+
+<blockquote>
+  <p>alter table tabname add column col type;</p>
+</blockquote>
+
+<ul>
+  <li>添加主键</li>
+</ul>
+
+<blockquote>
+  <p>alter table;</p>
+</blockquote>
+
+<ul>
+  <li>查看数据库编码</li>
+</ul>
+
+<blockquote>
+  <p>show create database db_name;</p>
+</blockquote>
+
+<ul>
+  <li>查看表编码</li>
+</ul>
+
+<blockquote>
+  <p>show create table tabname;</p>
+</blockquote>
+
+<hr />
+
+<h3 id="section">问题解决</h3>
+
+<blockquote>
+  <p>ERROR 1366 (HY000): Incorrect string value:;</p>
+
+  <p>修改表的字符集</p>
+</blockquote>
 
   </article>
 
